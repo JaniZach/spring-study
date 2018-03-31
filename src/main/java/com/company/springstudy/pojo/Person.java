@@ -1,36 +1,23 @@
 package com.company.springstudy.pojo;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 /**
  * @author P50
  * @date 2018/3/31 19:54
  */
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Person {
 
+    /** 姓名 */
     private String name;
-
+    /** 年龄 */
     private Integer age;
 
-    public Person() {
-    }
-
-    public Person(String name, Integer age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
 }
