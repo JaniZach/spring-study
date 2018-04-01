@@ -1,6 +1,7 @@
 package com.company.springstudy.config;
 
-import com.company.springstudy.service.UseFunctionService;
+import com.company.springstudy.pojo.DemoAnnotationService;
+import com.company.springstudy.pojo.DemoMethodService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -11,8 +12,10 @@ public class Main {
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DIConfig.class);
-        UseFunctionService service = context.getBean(UseFunctionService.class);
-        service.doSomeThing();
+        DemoAnnotationService annotationService = context.getBean(DemoAnnotationService.class);
+        annotationService.add();
+        DemoMethodService methodService = context.getBean(DemoMethodService.class);
+        methodService.add();
         context.close();
     }
 
