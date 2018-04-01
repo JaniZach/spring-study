@@ -1,7 +1,6 @@
 package com.company.springstudy.config;
 
-import com.company.springstudy.pojo.DemoAnnotationService;
-import com.company.springstudy.pojo.DemoMethodService;
+import com.company.springstudy.pojo.DemoScopeBean;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -12,10 +11,9 @@ public class Main {
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DIConfig.class);
-        DemoAnnotationService annotationService = context.getBean(DemoAnnotationService.class);
-        annotationService.add();
-        DemoMethodService methodService = context.getBean(DemoMethodService.class);
-        methodService.add();
+        DemoScopeBean bean1 = context.getBean(DemoScopeBean.class);
+        DemoScopeBean bean2 = context.getBean(DemoScopeBean.class);
+        System.out.println(bean1 == bean2);
         context.close();
     }
 
