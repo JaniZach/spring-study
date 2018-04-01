@@ -1,5 +1,6 @@
 package com.company.springstudy.config;
 
+import com.company.springstudy.pojo.DemoInitDestory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -9,13 +10,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ELConfig.class);
-        ELConfig bean = context.getBean(ELConfig.class);
-        try {
-            bean.outputResource();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DIConfig.class);
+        DemoInitDestory bean = context.getBean(DemoInitDestory.class);
         context.close();
     }
 

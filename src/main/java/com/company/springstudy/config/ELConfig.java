@@ -3,11 +3,9 @@ package com.company.springstudy.config;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.Resource;
 
@@ -54,11 +52,6 @@ public class ELConfig {
     @Value("http://www.baidu.com")
     private Resource testUrl;
 
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
-        return new PropertySourcesPlaceholderConfigurer();
-    }
-
     public void outputResource() throws Exception{
         System.out.println("注入字符串："+str);
         System.out.println("注入系统名称："+osName);
@@ -69,5 +62,4 @@ public class ELConfig {
         System.out.println("注入配置文件environment："+environment.getProperty("logging.path"));
         System.out.println("注入网址："+IOUtils.toString(testUrl.getInputStream()));
     }
-
 }

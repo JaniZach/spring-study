@@ -1,5 +1,6 @@
 package com.company.springstudy.config;
 
+import com.company.springstudy.pojo.DemoInitDestory;
 import com.company.springstudy.service.FunctionService;
 import com.company.springstudy.service.UseFunctionService;
 import org.springframework.context.annotation.Bean;
@@ -26,6 +27,11 @@ public class DIConfig {
         UseFunctionService service = new UseFunctionService();
         service.setFunctionService(functionService());
         return service;
+    }
+
+    @Bean(initMethod = "init", destroyMethod = "destory")
+    public DemoInitDestory demoInitDestory() {
+        return new DemoInitDestory();
     }
 
 }
