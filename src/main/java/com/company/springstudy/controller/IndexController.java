@@ -38,4 +38,10 @@ public class IndexController {
         return "index";
     }
 
+    @RequestMapping(value = "/httpclient")
+    @ResponseBody
+    public String client() {
+        return "success";
+    }
+
 }
