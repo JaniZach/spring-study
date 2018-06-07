@@ -7,7 +7,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 /**
  * @author P50
  * @date 2018/3/31 15:01
- *
+ * 
  * spring boot 配置类
  */
 @SpringBootApplication
